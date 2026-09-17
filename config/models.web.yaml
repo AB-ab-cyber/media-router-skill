@@ -1,0 +1,45 @@
+# ============================================================================
+# 这个文件由配置页面生成（media_router.py web），不需要手动编辑。
+# ----------------------------------------------------------------------------
+# 这里展示的是一份示例：用户在网页上添加了一个智谱厂商和一个模型，
+# 并隐藏了 models.yaml 里不需要的默认模型（_deleted: true 即"隐藏"）。
+#
+# 加载顺序：models.yaml 先加载，本文件叠加在上；同 id 的条目以本文件为准。
+# 密钥不在这个文件里，而在 config/secrets.web.yaml（.gitignore 已排除）。
+#
+# 首次使用建议直接运行 `python scripts/media_router.py web`，
+# 页面会自动生成属于你自己的这一份。
+# ============================================================================
+
+version: 1
+vendors: []
+# 示例（页面自动生成，仅供参考格式）：
+# vendors:
+#   - id: v-zhipu
+#     provider: openai
+#     catalog: zhipu
+#     label: 智谱 BigModel
+#     endpoints:
+#       image: https://open.bigmodel.cn/api/paas/v4/images/generations
+#       video: https://open.bigmodel.cn/api/paas/v4/videos/generations
+#     api_key_env: MY_API_KEY
+image:
+  strategy: priority_then_weight
+  models: []
+# 示例（页面自动生成，仅供参考格式）：
+# image:
+#   strategy: priority_then_weight
+#   models:
+#     - id: glm-image
+#       model: glm-image
+#       priority: 1
+#       weight: 50.0
+#       enabled: true
+#       supports:
+#         - text2img
+#       vendor: v-zhipu
+#     - id: wanx-2.5
+#       _deleted: true
+video:
+  strategy: priority_then_weight
+  models: []
